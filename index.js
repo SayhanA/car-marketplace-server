@@ -31,6 +31,7 @@ async function run() {
         await client.connect();
 
         const carCollection = client.db('toy-car').collection('cars')
+        const usersCollection = client.db('toy-car').collection('users')
 
         app.get('/cars', async(req, res) => {
             const result = await carCollection.find().toArray();
@@ -43,6 +44,12 @@ async function run() {
             const car = result.filter(data => data.category === category);
             res.send(car);
             
+        })
+        
+        // Users
+        app.get('/users', async(req, res) => {
+            const result = await usersCollection.find().toArray();
+            res.send(result)
         })
         
         // Send a ping to confirm a successful connection
