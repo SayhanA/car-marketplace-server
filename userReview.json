@@ -1,0 +1,43 @@
+[
+    {
+      "username": "SpeedyRacer27",
+      "title": "Super Speedy Race Car",
+      "brand": "Speedy Toys",
+      "rating": 4.5,
+      "review": "This race car is incredibly fast! It zooms across the floor and handles sharp turns like a pro. The design is sleek, and the colors are vibrant. My kid loves playing with it, and it's held up well so far.",
+      "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "username": "OffRoadExplorer",
+      "title": "Off-Road Adventure Truck",
+      "brand": "Adventure Toys",
+      "rating": 4.2,
+      "review": "The off-road truck is perfect for outdoor play. It has big, rugged tires that can tackle any terrain. The suspension system works great, and the car can handle jumps and bumps with ease. The only downside is that the paint chips off easily.",
+      "image": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "username": "CruisinCoolKid",
+      "title": "Convertible Cruiser",
+      "brand": "Cool Cars",
+      "rating": 3.8,
+      "review": "This convertible toy car is stylish and fun. The top can be taken off, allowing for an open-air driving experience. The wheels move smoothly, and it's easy to push around. However, the plastic feels a bit flimsy and could be more durable.",
+      "image": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+    },
+    {
+      "username": "LawEnforcer123",
+      "title": "Police Pursuit Vehicle",
+      "brand": "Justice Toys",
+      "rating": 4.7,
+      "review": "My kid loves playing with this police car. It has flashing lights and siren sounds, which make it more exciting. The build quality is excellent, and the doors and trunk can be opened. It even came with miniature cones and barriers for creating a police chase scene!",
+      "image": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+    },
+    {
+      "username": "MonsterTruckFanatic",
+      "title": "Monster Truck Madness",
+      "brand": "Mega Wheels",
+      "rating": 4.9,
+      "review": "This monster truck toy is a beast! It has massive wheels and a sturdy body that can withstand rough play. The suspension is top-notch, providing great jumps and stunts. The attention to detail is impressive, and the paint job is flawless. It's definitely a favorite in our collection.",
+      "image": "https://images.unsplash.com/photo-1584996931193-59d1ddbd4cb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+    }
+  ]
+  
