@@ -37,7 +37,13 @@ async function run() {
             res.send(result);
         })
 
-        
+        app.get('/cars/:category', async(req, res) => {
+            const category = req.params.category;
+            const result = await carCollection.find().toArray();
+            const car = result.filter(data => data.category === category);
+            res.send(car);
+            
+        })
         
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
