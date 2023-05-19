@@ -34,7 +34,12 @@ async function run() {
         const usersCollection = client.db('toy-car').collection('users')
 
         app.get('/cars', async(req, res) => {
-            const result = await carCollection.find().toArray();
+            console.log(req.query);
+            let query = {};
+            if(req.query?.email){
+                query = {sellerEmail: req.query.email}
+            }
+            const result = await carCollection.find(query).toArray();
             res.send(result);
         })
 
