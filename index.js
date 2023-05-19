@@ -38,6 +38,12 @@ async function run() {
             res.send(result);
         })
 
+        app.post('/cars', async(req, res) => {
+            const newCar = req.body;
+            const result = await carCollection.insertOne(newCar);
+            res.send(result);
+        })
+
         app.get('/cars/:category', async(req, res) => {
             const category = req.params.category;
             const result = await carCollection.find().toArray();
