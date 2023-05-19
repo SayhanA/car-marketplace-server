@@ -33,6 +33,35 @@ async function run() {
         const carCollection = client.db('toy-car').collection('cars')
         const usersCollection = client.db('toy-car').collection('users')
 
+
+        const indexKeys = {
+            seller: 1,
+            category: 1,
+            brand: 1,
+            title: 1
+        };
+
+        const indexOptions = { name: "search" };
+        
+        const result = await carCollection.createIndex(indexKeys, indexOptions);
+        
+        app.get('/search/:item', async(req, res) => {
+            const item = req.params.item;
+            console.log(item)
+
+            const result = await carCollection.find({
+                $or: [
+                    { title: { $regex: item, $options: "i" } },
+                    { seller: { $regex: item, $options: "i" } },
+                    { brand: { $regex: item, $options: "i" } },
+                    { category: { $regex: item, $options: "i" } },
+                ],
+            }).toArray();
+
+            res.send(result);
+            
+        })
+
         app.get('/cars', async(req, res) => {
             console.log(req.query);
             let query = {};
