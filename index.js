@@ -47,7 +47,7 @@ async function run() {
         
         app.get('/search/:item', async(req, res) => {
             const item = req.params.item;
-            console.log(item)
+            // console.log(item)
 
             const result = await carCollection.find({
                 $or: [
@@ -63,7 +63,7 @@ async function run() {
         })
 
         app.get('/cars', async(req, res) => {
-            console.log(req.query);
+            // console.log(req.query);
             let query = {};
             if(req.query?.email){
                 query = {sellerEmail: req.query.email}
@@ -78,6 +78,24 @@ async function run() {
             res.send(result);
         })
 
+        app.put('/cars/:id', async(req, res) => {
+            const id = req.params.id;
+            const filter = {_id: new ObjectId(id)};
+            const options = {update: true};
+            const updateCar = req.body;
+            console.log(updateCar)
+            const car = {
+                $set:{
+                    title: updateCar.title,
+                    price: updateCar.price,
+                    quantity: updateCar.quantity,
+                    description: updateCar.description,
+                }
+            };
+            const result = await carCollection.updateOne(filter,car,options);
+            res.send(result)
+        })
+
         app.get('/cars/:category', async(req, res) => {
             const category = req.params.category;
             const result = await carCollection.find().toArray();
@@ -88,11 +106,13 @@ async function run() {
 
         app.get('/car/:id', async(req, res) => {
             const id = req.params.id;
-            console.log(id)
+            // console.log(id)
             const query = {_id: new ObjectId(id)};
             const result = await carCollection.find(query).toArray();
             res.send(result)
         })
+
+        
         
         // Users
         app.get('/users', async(req, res) => {
