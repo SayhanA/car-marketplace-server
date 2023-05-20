@@ -28,7 +28,7 @@ const client = new MongoClient(uri, {
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-         client.connect();
+        client.connect();
 
         const carCollection = client.db('toy-car').collection('cars')
         const usersCollection = client.db('toy-car').collection('users')
@@ -119,6 +119,19 @@ async function run() {
             const result = await carCollection.deleteOne(query);
             res.send(result)
         })
+
+
+        app.get('/paginate', async(req, res) => {
+            console.log(req.query);
+              const page = parseInt(req.query.pages) || 0;
+              console.log(page)
+              const limit = parseInt(req.query.limit) || 10;
+              const skip = page * limit;
+      
+              const results = await carCollection.find().skip(skip).limit(limit).sort({ price: req.query.sort }).toArray();
+              res.send(results)
+          })
+        
         
         // Users
         app.get('/users', async(req, res) => {
